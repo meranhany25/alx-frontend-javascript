@@ -10,6 +10,6 @@ export default class HolbertonClass {
 
   // Override toString() for string context
   toString() {
-    return this._location;
+  return this._location;
   }
 }
