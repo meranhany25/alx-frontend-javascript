@@ -4,12 +4,29 @@ export default class HolbertonClass {
     this._location = location;
   }
 
-  valueOf() {
+  get size() {
     return this._size;
   }
 
-  // Override toString() for string context
-  toString() {
-  return this._location;
+  set size(size) {
+    this._size = size;
+  }
+
+  get location() {
+    return this._location;
+  }
+
+  set location(location) {
+    this._location = location;
+  }
+
+  [Symbol.toPrimitive](hint) {
+    if (hint === 'number') {
+      return this._size;
+    }
+    if (hint === 'string') {
+      return this._location;
+    }
+    return null;
   }
 }
